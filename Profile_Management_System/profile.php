@@ -19,33 +19,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Refresh:0");
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-    <h2>Profile</h2>
-    <div class="profile-info">
-    <p>Name: <?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : 'N/A'; ?></p>
-    <p>Email: <?php echo $user['email']; ?></p>
-    <p>Age: <?php echo $user['age'] ?? 'N/A'; ?></p>
-    <p>Mobile: <?php echo $user['mobile_number'] ?? 'N/A'; ?></p>
-    <p>College: <?php echo $user['college_number'] ?? 'N/A'; ?></p>
+        <h2>Profile</h2>
+        <div class="profile-info">
+            <p>Name: <?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : 'N/A'; ?></p>
+            <p>Email: <?php echo $user['email']; ?></p>
+            <p>Age: <?php echo $user['age'] ?? 'N/A'; ?></p>
+            <p>Mobile: <?php echo $user['mobile_number'] ?? 'N/A'; ?></p>
+            <p>College: <?php echo $user['college_name'] ?? 'N/A'; ?></p>
+        </div>
+        <h3>Update Profile</h3>
+        <form method="POST">
+            Age: <input type="number" name="age" value="<?php echo $user['age'] ?? ''; ?>">
+            Mobile: <input type="text" name="mobile" value="<?php echo $user['mobile_number'] ?? ''; ?>">
+            College: <input type="text" name="college" value="<?php echo $user['college_name'] ?? ''; ?>">
+            <input type="submit" value="Update">
+        </form>
+        <a href="logout.php">Logout</a>
     </div>
-    <h3>Update Profile</h3>
-    <form method="post">
-        Age: <input type="number" name="age" value="<?php echo $user['age'] ?? ''; ?>"><br>
-        Mobile: <input type="text" name="mobile" value="<?php echo $user['mobile_number'] ?? ''; ?>"><br>
-        College: <input type="text" name="college" value="<?php echo $user['college_name'] ?? ''; ?>"><br>
-        <input type="submit" value="Update">
-    </form>
-    <a href="logout.php">Logout</a>
-    </div>
+    <script>
+        alert('Update Your Profile');
+    </script>
 </body>
 </html>

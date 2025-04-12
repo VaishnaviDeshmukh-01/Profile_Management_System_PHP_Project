@@ -33,5 +33,8 @@ if ($_SERVER[ "REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Register">
     </form>
     </div>
+    <script>
+        alert('Register Yourself');
+    </script>
 </body>
 </html>

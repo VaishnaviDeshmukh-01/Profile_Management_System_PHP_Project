@@ -30,5 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Reset">
    </form>
    </div>
+   <script>
+    alert('Reset Your Password')
+   </script>
 </body>
 </html>
